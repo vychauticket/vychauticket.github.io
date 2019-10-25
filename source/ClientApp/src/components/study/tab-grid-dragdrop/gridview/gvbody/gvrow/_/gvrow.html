@@ -1,0 +1,41 @@
+<div class="gv-row" :class="{'is-display-details': displayRowDetails}">
+    <div class="main-content">
+        <div v-for="column in arrDraggableHeader" :style="{width: column.widthPercentage }">
+            <span v-if="column.modelData==='quoteRequestRef'"
+                class="to-numbel-label">{{dataItem[column.modelData]}}</span>
+
+            <span v-if="column.modelData==='transportMode'"
+            class="to-numbel-label">{{dataItem[column.modelData]}}</span>
+
+            <!-- <mode-icon v-if="column.modelData==='transportMode'" :modeCode="dataItem.transportModeCode"></mode-icon>
+
+            <risk-icon v-if="column.modelData==='risk'" :state="dataItem[column.modelData]"
+                :style="{visibility: getRiskVisibility(dataItem[column.modelData])}"></risk-icon>
+
+            <status-icon v-if="column.modelData==='status'" :code="dataItem[column.modelData]" :numberOfQuotation="dataItem.quotationNumber"
+                :displayQuotation.sync="displayRowDetails">
+            </status-icon> -->
+
+            <span v-if="['quoteRequestRef','transportMode','risk','status'].indexOf(column.modelData) < 0">
+                <span v-if="['startDate','endDate'].indexOf(column.modelData) > -1">
+                    {{dataItem[column.modelData]}}
+                </span>
+                <span v-if="['startDate','endDate'].indexOf(column.modelData) < 0">
+                    {{dataItem[column.modelData]}}
+                </span>
+            </span>
+        </div>
+
+        <div class="icon-collapse" :display-details="String(displayRowDetails)"
+            v-on:click="displayRowDetails = (!displayRowDetails)"
+            v-if= "dataItem.quotationNumber > 0">
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+            <i class="fa fa-angle-up" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <div v-if="displayRowDetails" class="details-content">
+        <!-- <row-details :quotationDetail="rowDetailsData"></row-details> -->
+        <h1>row detail component here</h1>
+    </div>
+</div>

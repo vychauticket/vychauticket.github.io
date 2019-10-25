@@ -1,0 +1,121 @@
+<tr v-on:mouseover="mouseOver($event)" v-on:mouseleave="mouseLeave($event)" style="height: 70px">
+    <td hidden>
+        <span class="id"> {{ idProcess }} </span>
+    </td>
+    <td>
+        <span class="row-template-name" v-on:click="onClickView($event)"> {{ processName }} </span>
+    </td>
+    <td>
+        <span class="client"> {{ processClient }} </span>
+    </td>
+    <td>
+        <span class="module"> {{ processModuleType }} </span>
+    </td>
+    <td>
+        <span class="alert-type"> {{ processAlertType }} </span>
+    </td>
+    <td>
+        <div class="row">
+            <div class="col-3">
+                <span class="activated"> {{ processActivated }} </span>
+            </div>
+
+            <div class="col-9" v-show="!args.isExplored">
+                <transition name="slide">
+
+                    <div id="command-buttons" v-show="isShowCommandButtons">
+
+                        <!-- DUPLICATE Btn -->
+                        <b-button ref="dupBtn"
+                                  class='k-button k-button-icontext k-grid-edit'
+                                  v-on:click="onClickShowDuplicate($event)">
+
+                            <i class='fas fa-lg fa-copy'></i>
+                        </b-button>
+                        <b-tooltip :target="() => $refs.dupBtn" title="Duplicate">
+                        </b-tooltip>
+                        <!-- END -->
+                        <!-- ************************************************************* -->
+                        <!-- DELETE Btn -->
+                        <b-button ref="delBtn"
+                                  class='k-button k-button-icontext k-grid-edit'
+                                  v-on:click="onClickShowDelete($event)">
+                            <i class='fas fa-lg fa-trash-alt'></i>
+                        </b-button>
+                        <b-tooltip :target="() => $refs.delBtn" title="Delete"></b-tooltip>
+                        <!-- END -->
+                        <!-- ************************************************************* -->
+                        <!-- PAUSE Btn -->
+                        <b-button ref="pauseBtn"
+                                  class='k-button k-button-icontext k-grid-edit'
+                                  type="submit"
+                                  v-on:click="onClickPause($event)"
+                                  v-show="!isShowPauseButton">
+                            <i class='fas fa-lg fa-pause'></i>
+                        </b-button>
+                        <b-tooltip :target="() => $refs.pauseBtn" title="Pause"></b-tooltip>
+                        <!-- END -->
+                        <!-- ************************************************************* -->
+                        <!-- PLAY Btn -->
+                        <b-button ref="playBtn"
+                                  class='k-button k-button-icontext k-grid-edit'
+                                  v-on:click="onClickPlay($event)"
+                                  v-show="isShowPauseButton">
+                            <i class='fas fa-lg fa-play'></i>
+                        </b-button>
+                        <b-tooltip :target="() => $refs.playBtn" title="Resume"></b-tooltip>
+                        <!-- END -->
+                        <!-- ************************************************************* -->
+                        <!-- VIEW Btn -->
+                        <b-button ref="viewBtn"
+                                  class='k-button k-button-icontext k-grid-edit'
+                                  v-on:click="onClickView($event)">
+                            <i class='fas fa-lg fa-eye'></i>
+                        </b-button>
+                        <b-tooltip :target="() => $refs.viewBtn" title="View"></b-tooltip>
+                        <!-- END -->
+
+                    </div>
+
+                </transition>
+            </div>
+        </div>
+    </td>
+    <td v-show="args.isExplored">
+        <div class="row">
+            <div class="col-7">
+                <span class="alert-type"> {{ processCreatedBy }} </span>
+            </div>
+
+            <div class="col-5">
+                <transition name="slide">
+
+                    <div id="command-buttons-is-explored" v-show="isShowCommandButtons">
+
+                        <!-- DUPLICATE Btn -->
+                        <b-button ref="dupBtnExplored"
+                                  class='k-button k-button-icontext k-grid-edit'
+                                  v-on:click="onClickShowDuplicate($event)">
+
+                            <i class='fas fa-lg fa-copy'></i>
+                        </b-button>
+                        <b-tooltip :target="() => $refs.dupBtnExplored" title="Duplicate">
+                        </b-tooltip>
+                        <!-- END -->
+                        <!-- ************************************************************* -->
+                        <!-- VIEW Btn -->
+                        <b-button ref="viewBtnExplored"
+                                  class='k-button k-button-icontext k-grid-edit'
+                                  v-on:click="onClickView($event)">
+                            <i class='fas fa-lg fa-eye'></i>
+                        </b-button>
+                        <b-tooltip :target="() => $refs.viewBtnExplored" title="View"></b-tooltip>
+                        <!-- END -->
+
+                    </div>
+
+                </transition>
+            </div>
+        </div>
+    </td>
+</tr>

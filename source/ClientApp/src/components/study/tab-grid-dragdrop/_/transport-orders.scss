@@ -1,0 +1,56 @@
+$PageTitle: #09203E;
+$PageHeader: #f1f4f8;
+
+$UIGray: #A1B1C6;
+$BkDarkBlueGray: #596A80;
+
+$PrimaryBlue300: #4285B1;
+
+#transport-orders {
+  .page-header {
+    padding: 0 2%;
+    min-width: 100vh;
+    margin-bottom: 2%;
+    background-color: $PageHeader;
+
+    .title-info {
+      color: $PageTitle;
+
+      .title-info-text {
+        font-weight: bold;
+        float: left;
+        margin: 0px 10px;
+        font-size: 3rem;
+      }
+    }
+
+    .tabs {
+      ul {
+        li {
+          a {
+            color: $UIGray;
+            text-align: left;
+
+            &:hover {
+              border: none;
+            }
+            
+            &.nav-link.active {
+              color: $BkDarkBlueGray;
+              font-weight: bold;
+              background-color: transparent;
+              border: none;
+              border-bottom: 3px solid $PrimaryBlue300;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .page-body {
+    padding: 0 2%;
+    min-width: 100vh;
+    margin-bottom: 2%;
+  }
+}

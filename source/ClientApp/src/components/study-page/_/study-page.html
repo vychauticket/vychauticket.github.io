@@ -1,0 +1,88 @@
+﻿<!-- <wa-layout>
+    <template slot="header" v-if="isShowLoading==false">
+        <h1>
+                Study page
+            <strong>
+                Study page
+            </strong>
+        </h1>
+    </template>
+
+    <template slot="content" v-if="isShowLoading==false">
+        <div>
+                <h1>Study here</h1>
+        </div>         -->
+        <!-- <hello :name="name"></hello> -->
+    <!-- </template>
+</wa-layout> -->
+<div>
+    <h3 style="color: blue">Renderless component</h3>
+    <keep-alive>
+        <component :is="typeOfGreeting" :name="name" :isActive="isActive"></component>
+    </keep-alive>
+    <!-- <hello :name="name" :isActive="isActive"></hello> -->
+
+    <button v-on:click="setName('Nhat')">Nhat</button>
+    <button v-on:click="setName('Peter')">Peter</button>
+    
+    <hr class="mt-5">
+    <h3 style="color: blue">event for textbox with listener</h3>
+    <text-box @focus="onFocus"></text-box>
+    
+    <hr class="mt-5">
+    <h3 style="color: blue">slot scope: passing parameter from child to parent</h3>
+    <!--refer: https://adamwathan.me/renderless-components-in-vuejs/-->
+    <car>
+        <h1 slot="header">Special Features</h1>
+        <div slot="body">
+            <h5>Fish and Chips</h5>
+            <p>Super delicious tbh.</p>
+        </div>
+        <div slot="link" slot-scope="{link, bookmark}">
+            <a  :href="link.href">{{ link.title }}</a>
+            <button v-show="!link.bookmarked" @click="bookmark(link)">Bookmark</button>
+        </div>        
+    </car>
+
+    <hr class="mt-5">
+    <h3 style="color: blue">slot scope: renderless component</h3>
+    <!--Renderless component-->
+    <renderless-component-example>
+        <h1 slot-scope={exampleProp}>Hello {{exampleProp}}!</h1>
+    </renderless-component-example>
+
+    <hr class="mt-5">
+    <h4 style="color: blue">slot scope: with slot scope nothing</h4>
+    <!--with slot scope nothing-->
+    <renderless-tags-input>
+        <div slot-scope="{}" class="tags-input">
+            <span class="tags-input-tag">
+                <span>Testing</span>
+                <span>Design</span>
+                <button type="button" class="tags-input-remove">&times;</button>
+            </span>
+            <input class="tags-input-text" placeholder="Add tag...">
+        </div>
+    </renderless-tags-input>
+
+    <hr class="mt-5">
+    <h4 style="color: blue">slot scope: with slot scope is tags</h4>
+    <!--with slot scope is tags-->
+    <renderless-tags-input v-model="tags">
+            <div slot-scope="{tags, removeTag, inputAttrs, inputEvents, addTag}" class="tags-input">                
+                <span class="tags-input-tag" v-for="tag in tags">
+                    <span>{{tag}}</span>
+                    <button type="button" class="tags-input-remove" @click="removeTag(tag)">&times;</button>
+                </span>
+                <input class="tags-input-text" placeholder="Add tag..." v-bind="inputAttrs" v-on="inputEvents">
+                <button type="button" class="tags-input-text" @click="addTag">Add tags</button>
+            </div>
+        </renderless-tags-input>
+        <hr class="mt-5">
+        <h3 style="color: blue">Study table</h3>
+        <table-demo></table-demo>
+
+    <hr class="mt-5">
+    <h4 style="color: blue">Tab grid drag drop</h4>    
+    <tab-grid-dragdrop></tab-grid-dragdrop>
+</div>
