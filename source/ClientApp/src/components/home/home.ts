@@ -20,7 +20,7 @@ import { Root } from "../../store/root-module";
 
 export const eventBus = new Vue();
 const IMG_BGSECTION = "./assets/images/person-transparent-2.png";
-const IMG_VIDEO = "./assets/images/img-video-1.jpg";
+const IMG_VIDEO = "./assets/images/nhanvien.jpg";
 const IMG_DOCPERSON2 = "./assets/images/doc_person_2.jpg";
 const IMG_DOCPERSON1 = "./assets/images/doc_person_1.jpg";
 const IMG_DOCPERSON3 = "./assets/images/doc_person_3.jpg";
@@ -28,6 +28,7 @@ const IMG_PERSON2 = "./assets/images/person_2.jpg";
 const IMG_PERSON1 = "./assets/images/person_1.jpg";
 const IMG_PERSON3 = "./assets/images/person_3.jpg";
 const IMG_PERSON4 = "./assets/images/person_4.jpg";
+const IMG_BOOKING = "./assets/images/booking.jpg";
 Vue.use(DataSourceInstaller);
 @Component({
     template: require("./home.html"),
@@ -48,6 +49,7 @@ export class HomeComponent extends Vue {
     imgPerson1: string;
     imgPerson3: string;
     imgPerson4: string;
+    imgBooking: string;
     private  package: string = "vue-webpack-typescript";
     private repo: string = "https://github.com/ducksoupdev/vue-webpack-typescript";
     private mode: string = process.env.ENV;
@@ -129,6 +131,7 @@ export class HomeComponent extends Vue {
         this.imgPerson1 = IMG_PERSON1;
         this.imgPerson3 = IMG_PERSON3;
         this.imgPerson4 = IMG_PERSON4;
+        this.imgBooking = IMG_BOOKING;
     }
 
     private generateRowItemTemplate(e?: any) {
