@@ -1,0 +1,64 @@
+<!-- <b-navbar-nav style="position: fixed;" class="vertical-nav" vertical>
+        <a :href="pathToLink" style="margin-top: 15%;">
+                <img :src="imgLink" class="img-link">
+            </a>         
+                <b-nav-item v-for="link in links" :key="link.name" v-if="isShowNavBar" @click="clickLink(link.name, link.path, link.isRedirect)">
+                    <div style="width: 200%;" class="menu-modules">
+                        <i class="fas fa-user menu-icons"></i>
+                        <span class="menu-text">{{link.name}}</span>
+                    </div>
+                </b-nav-item>  -->
+    <!-- <img :src="imgBollore" class="img-bollore"> -->
+
+    <!-- <div>
+        <logins-dropdown></logins-dropdown>
+    </div> -->
+<!-- </b-navbar-nav> -->
+
+<div class="d-none d-lg-block" v-bind:class="collapseClassActive?'collapse-sidedrawer':''">
+    
+        <div id="sidedrawer"  @mouseleave="onMenuMouseLeave" @mouseenter="onMenuMouseEnter">
+            <div class="sidedrawer-header">
+                <div id="sidedrawer-brand">
+                        <a :href="pathToLink" style="margin-top: 15%;">
+                                <img :src="imgLink" class="link-logo">
+                            </a>  
+                </div>
+                <div class="collapsed-burger">
+                    <i class="fas fa-bars fa-lg js-hide-sidedrawer" aria-hidden="true"></i>
+                </div>
+            </div>
+    
+            <div class="menu-modules">
+                    <b-navbar-nav class="vertical-nav" vertical>      
+                        <b-nav-item v-for="link in links" :key="link.name" v-if="isShowNavBar" @click="clickLink(link.name, link.path, link.isRedirect)">
+                            <div style="width: 200%;" class="menu-module">
+                                <span class="module-picto">
+                                        <i class="fas fa-user menu-icons"></i>
+                                </span>                                
+                                <span class="menu-text">{{link.name}}</span>
+                            </div>
+                        </b-nav-item> 
+                    </b-navbar-nav>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <a style="display: inline-block;" class="menu-module" href='@Url.Action("Index", "Contact")'>
+                            <span class="module-picto">
+                                <i class="fas fa-at" aria-hidden="true"></i>{{collapseClassActive}}
+                            </span>
+                            <strong class="module-title">@Html.DisplayNameFor(m => m.Contact)</strong>
+                        </a>
+                    </li>
+                </ul>
+    
+                <div class="bollore-logo" style="padding-top: 50px;">
+                    <!-- <img alt=" " src='@Url.Content("~/Content/images/bollore-logo-white.png")' /> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+

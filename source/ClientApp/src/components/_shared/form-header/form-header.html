@@ -1,0 +1,33 @@
+<div>
+    <template v-if="status === 'active'">
+        <b-row>
+            <b-col class="content">
+                <span class="active-badge">{{ number }}</span>
+                <strong>{{title}}</strong>        
+            </b-col>
+        </b-row>
+    </template>
+
+    <template v-if="status === 'empty'">
+        <b-row >
+            <b-col class="content">
+                <span class="empty-badge"><span style="margin-bottom: 1px;">{{ number }}</span></span>
+                <strong>{{title}}</strong>   
+            </b-col>
+        </b-row>
+    </template>
+
+    <template v-if="['filled', 'recapNonEdit', 'recapSpecial'].indexOf(status) > -1">
+        <b-row>
+            <b-col class="content">
+                <i class="fas fa-check filled-badge"></i>
+                <strong style="color: gray;">{{title}}</strong>   
+            </b-col>
+            <b-col style="text-align: right;" align-self="end" offset="4">
+                <a v-if="['filled', 'recapSpecial'].indexOf(status) > -1" style="color: gray; cursor: pointer;" @click="onClickEdit">Edit</a>
+            </b-col>
+            
+        </b-row>
+        <hr>
+    </template>
+</div>

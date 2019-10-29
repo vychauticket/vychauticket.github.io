@@ -1,0 +1,56 @@
+.mpcontent  h1 {    
+    text-align: center;
+}
+.mpcontent span  {
+    float: left;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sort-process {   
+    color: #5E95B8;    
+    padding: 7px;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 17px;
+}
+.mpcontent .active{
+    color: white;
+    background-color: #2670A1;
+}
+.mpcontent .explore {
+    color: #F6B63A;
+}
+.mpcontent .activeE{
+    color: white;
+    background-color: #F6B63A;
+}
+.refresh-button {
+    color: #0b5e95;
+}
+.refresh-button .explore {
+    color: #F6B63A;
+}
+
+.btn-explore {
+    background-color: #2670A1;
+    border-color: #2670A1;
+    color: white;
+}
+.input-group .input-group-append .explore {
+    color: white;
+    background-color: #F6B63A;
+    border-color: #F6B63A;
+}
+.input-group .input-group-append .explore {
+    color: white;
+    background-color: #F6B63A;
+}
+
+.btn-new-process {
+    background-color: #3AC474;
+    border-color: #3AC474;
+    color: white;
+}

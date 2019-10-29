@@ -1,0 +1,28 @@
+﻿
+<b-modal id="popup-container" v-model="modalShow" centered size="md">
+    <div slot="modal-header" class="w-100">
+        <b-container fluid class="d-flex">
+            <div class="d-flex align-items-start">
+                <p class="popup__header__text"> {{ popTitle }} </p>
+            </div>
+            <div class="d-flex align-items-start position-absolute w-100">
+                <b-button-close size="md" @click="closePopup(false)" class="close position-relative popup__header__btn--close"></b-button-close>
+            </div>
+        </b-container>
+    </div>
+    <b-container fluid>
+        <div class="popup__body">
+            <slot>
+
+            </slot>
+        </div>
+    </b-container>
+    <div slot="modal-footer" class="w-100">
+        <div class="d-flex justify-content-center">
+            <b-button v-if="isDanger" size="md" variant="danger" class="float-right" @click="closePopup(true)"> {{ popBtnPrimary }} </b-button>
+            <b-button v-else size="md" variant="success" class="float-right" @click="closePopup(true)"> {{ popBtnPrimary }} </b-button>
+            <span>&ensp;&ensp;</span>
+            <b-button size="md" variant="outline-success" class="float-left" @click="closePopup(false)"> {{ popBtnSecond }} </b-button>
+        </div>  
+    </div>
+</b-modal>

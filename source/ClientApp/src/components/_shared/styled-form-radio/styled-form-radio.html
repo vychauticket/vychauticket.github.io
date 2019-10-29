@@ -1,0 +1,48 @@
+<span>
+    <template v-if="status === 'active'">
+        <h5 style="margin-top: 30px;">{{ title }}</h5>
+        <label :class="classExplain">
+            {{ description }}
+        </label>
+        
+        <div class="radio-btn-group">
+            <div class="radio" v-bind:class="{ 'radio--disable': disableValue == 1 }">
+                <input type="radio" 
+                        :name="radioName" 
+                        :checked="isOption1Selected"
+                        @click="selected(label1, icon1, id1)" 
+                        :id="option1Id"
+                        :disabled="disableValue == 1"/>
+                <label :for="option1Id" :class="{ 'invalid-input': valid }">
+                    <span><i :class="icon1"></i> {{ label1 }}</span>
+                </label>
+            </div>
+            <div class="radio" v-bind:class="{ 'radio--disable': disableValue == 2 }">
+                <input type="radio" 
+                        :name="radioName" 
+                        :checked="isOption2Selected" 
+                        @click="selected(label2, icon2, id2)" 
+                        :id="option2Id"
+                        :disabled="disableValue == 2"/>
+                <label :for="option2Id" :class="{ 'invalid-input': valid }">
+                    <span><i :class="icon2"></i> {{ label2 }}</span>
+                </label>
+            </div>
+        </div>
+        <p class="invalid-message" v-if="valid">This field is required</p>
+    </template>
+    
+    <template v-if="['filled', 'recapNonEdit', 'recapSpecial'].indexOf(status) > -1">
+        <h6>{{ title }}</h6>
+        <hr>
+        <div class="option-filled">
+            <i :class="iconUI"></i>
+            <span v-if="classFilled===''">
+                {{ labelUI }}
+            </span>
+            <span v-if="classFilled!==''" :class="classFilled">
+                {{ labelUI }}
+            </span>
+        </div>
+    </template>
+</span>

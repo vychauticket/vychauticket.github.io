@@ -1,0 +1,20 @@
+.gv-body {
+    width: 100%;
+    position: relative;
+  
+    .gv-row-global {
+      width: 100%;
+      min-height: 80px;
+      margin: 10px 0;
+      border: 1px solid #d7dae0;
+      border-radius: 10px;
+      
+      &:nth-child(even) {
+          background-color: #ffffff;
+      }
+      &:nth-child(odd) {
+        background-color: #f1f4f8;
+      }
+    }
+  }
+  

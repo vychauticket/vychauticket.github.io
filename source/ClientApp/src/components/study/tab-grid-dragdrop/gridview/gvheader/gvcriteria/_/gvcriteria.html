@@ -1,0 +1,43 @@
+<div class="criteria-component">
+    <div class="criteria-header">
+        <span>{{titleCriteria}}</span>
+        <!-- <order-row-component v-if="!onlyTitle" :columnName="columnName"
+            :orderStatus.sync="syncOrderColumn.columName" :orderAscDesc.sync="syncOrderColumn.isAscending">
+        </order-row-component> -->
+        <!-- <div v-if="onlyTitle" style="visibility: hidden">
+            <label>Hidden</label>
+        </div> -->
+    </div>
+    <div v-if="!onlyTitle" class="criteria-content">
+        <!-- <b-form-input v-if="isInput" v-model="syncDataInput"></b-form-input>
+        <b-form-select v-if="isDropDownList" v-model="syncSelectedItem" :options="listData" value-field="code"
+            text-field="label">
+        </b-form-select>
+        <div class="v-carlendar-input">
+            <v-date-picker v-if="isDateTime" v-model="syncDataDate"
+                :popover="{ placement: 'bottom', visibility: 'click' }">
+                <b-input-group>
+                    <b-input-group-prepend>
+                        <span class="input-group-text"><i class="fa fa-calendar-alt fa-lg"></i></span>
+                    </b-input-group-prepend>
+                    <b-form-input v-model="modelDataStringDate"></b-form-input>
+                </b-input-group>
+            </v-date-picker>
+        </div> -->
+        <b-form-input v-if="isInput" ></b-form-input>
+        <b-form-select v-if="isDropDownList" :options="listData" value-field="code"
+            text-field="label">
+        </b-form-select>
+        <div class="v-carlendar-input">
+            <v-date-picker v-if="isDateTime" 
+                :popover="{ placement: 'bottom', visibility: 'click' }">
+                <b-input-group>
+                    <b-input-group-prepend>
+                        <span class="input-group-text"><i class="fa fa-calendar-alt fa-lg"></i></span>
+                    </b-input-group-prepend>
+                    <b-form-input ></b-form-input>
+                </b-input-group>
+            </v-date-picker>
+        </div>
+    </div>
+</div>

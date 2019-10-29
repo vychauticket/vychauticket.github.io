@@ -1,0 +1,66 @@
+<div id="app">
+  <!--Table 1-->
+  <b-table :items="items" :fields="fields">
+    <template v-for="(field, index) in fields" :slot="field.key" slot-scope="data">
+      <div v-if="field.colType === 'button'">
+        <h5>{{data.item.name}}</h5>
+        <b-button>Am Button</b-button>
+      </div>
+      <div v-else-if="field.colType === 'span'">
+        <h5>{{data.item.name}}</h5>
+        <span>Am Span</span>
+      </div>
+      <div v-else>
+        <h5>{{data.item.name}}</h5>
+        Am Confused
+      </div>
+    </template>
+  </b-table>
+  <!--Table 2-->
+  <b-table small :items="items1" :fields="fields1">
+    <template slot="cell(index)" slot-scope="data">
+      {{data.index + 1}}
+    </template>
+    <template slot="cell(name)" slot-scope="data">
+      <b class="text-info">{{ data.value.last.toUpperCase() }}</b>, <b>{{ data.value.first }}</b>
+    </template>
+    <template slot="cell(nameage)" slot-scope="data">
+      {{ data.item.name.first }} is {{ data.item.age }} years old
+    </template>
+    <template slot="cell()" slot-scope="data">
+      <i>{{ data.value }}</i>
+    </template>
+  </b-table>
+
+  <!--Table 3-->
+  <div>
+      <b-table :items="items2" :fields="fields2" striped responsive="sm">
+        <template slot="cell(show_details)" slot-scope="row">
+          <b-button size="sm" @click="row.toggleDetails" class="mr-2">
+            {{ row.detailsShowing ? 'Hide' : 'Show'}} Details
+          </b-button>
+  
+          <!-- As `row.showDetails` is one-way, we call the toggleDetails function on @change -->
+          <b-form-checkbox v-model="row.detailsShowing" @change="row.toggleDetails">
+            Details via check
+          </b-form-checkbox>
+        </template>
+  
+        <template slot="row-details" slot-scope="row">
+          <b-card>
+            <b-row class="mb-2">
+              <b-col sm="3" class="text-sm-right"><b>Age:</b></b-col>
+              <b-col>{{ row.item.age }}</b-col>
+            </b-row>
+  
+            <b-row class="mb-2">
+              <b-col sm="3" class="text-sm-right"><b>Is Active:</b></b-col>
+              <b-col>{{ row.item.isActive }}</b-col>
+            </b-row>
+  
+            <b-button size="sm" @click="row.toggleDetails">Hide Details</b-button>
+          </b-card>
+        </template>
+      </b-table>
+    </div>
+</div>
