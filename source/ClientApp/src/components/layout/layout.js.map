@@ -1,1 +1,0 @@
-{"version":3,"file":"layout.js","sourceRoot":"","sources":["layout.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;AAAA,OAAO,EAAE,SAAS,EAAE,GAAG,EAAE,MAAM,wBAAwB,CAAC;AACxD,OAAO,eAAe,CAAC;AAQvB;IAAqC,mCAAG;IAAxC;;IACA,CAAC;IADY,eAAe;QAN3B,SAAS,CAAC;YACP,QAAQ,EAAE,OAAO,CAAC,eAAe,CAAC;YAClC,UAAU,EAAE,EAEX;SACJ,CAAC;OACW,eAAe,CAC3B;IAAD,sBAAC;CAAA,AADD,CAAqC,GAAG,GACvC;SADY,eAAe"}

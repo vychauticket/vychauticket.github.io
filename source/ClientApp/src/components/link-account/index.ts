@@ -1,1 +1,0 @@
-﻿export * from "./_/link-account";

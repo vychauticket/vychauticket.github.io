@@ -1,8 +1,0 @@
-<b-row>
-    <b-col>
-        <div v-if="gvData != null && gvData.length > 0" class="gv-body">
-            <gvrow class="gv-row-global" v-for="(rowItem, index) in gvData" :dataItem="rowItem"
-                :key="index + '-' + rowItem.quoteRequestRef" />
-        </div>
-    </b-col>
-</b-row>
